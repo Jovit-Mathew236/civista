@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://github.com/Jovit-Mathew236/My-Personal-Web/blob/main/Logo2.png?raw=true" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>BRIDGE DESIGN WITH ICE CREAM STICKS | ASTHRA</title>
 </head>
@@ -18,10 +19,10 @@
                 </h1>
                 <p>
                     Get your design knowledge tested in the first round and apply them if you get
-past there. Can you take up this challenge to build the most stable bridge which
-can withhold the greatest amount of weight- with 100 icecream sticks?
-If you think you can, we welcome you to participate in this bridge designing
-competition where the bridge which can hold the most amount of weight wins!
+                    past there. Can you take up this challenge to build the most stable bridge which
+                    can withhold the greatest amount of weight- with 100 icecream sticks?
+                    If you think you can, we welcome you to participate in this bridge designing
+                    competition where the bridge which can hold the most amount of weight wins!
 
                     <br> <br>
                     <b> Prize Pool: 1st
@@ -65,7 +66,7 @@ competition where the bridge which can hold the most amount of weight wins!
         form.addEventListener('submit', e => {
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => alert("You have successfully submitted."))
+                .then(response => swal("Good job!", "You have successfully submitted !", "success").then(() => location.reload()))
                 .catch(error => console.error('Error!', error.message))
         })
     </script>
