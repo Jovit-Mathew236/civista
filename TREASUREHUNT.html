@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://github.com/Jovit-Mathew236/My-Personal-Web/blob/main/Logo2.png?raw=true" />
+    <link rel="stylesheet" href="style.css">
+    <title>TREASURE HUNT | ASTHRA</title>
+</head>
+
+<body>
+    <div class='star'>
+        <div class='head-box'>
+            <div class='head'>
+                <h1> TREASURE HUNT</h1>
+                <p>
+                    The goal is to complete the hunt before everyone else and find the hidden
+                    treasure! It's simple right? Maybe not :P
+                    A game which needs not only your Spider tingle but also demands your fast and
+                    quirky personality.
+                    Get ready for this scavenger hunt!
+
+
+                    <br> <br>
+                    <b> Prize Pool: 1st
+                        :₹2000<br>
+                        2
+                        nd
+                        :₹1000 </b>
+                </p>
+            </div>
+        </div>
+        <div class='form'>
+            <div>
+                <form name="google-sheet" method="post" autocomplete="off">
+                    <div class='form-inp-field'>
+                        <div class='form-field'>
+
+                            <label>Name</label><br><br>
+                            <input type="text" name="Name" placeholder='Name' required><br><br>
+                            <label>Phone</label><br><br>
+                            <input type="number" name="Phone" placeholder='Phone Number' required><br>
+                        </div>
+                        <div class='form-field'>
+                            <label>Email</label><br><br>
+                            <input type="email" name="Email" placeholder='yourname@gamil.com' required><br><br>
+                            <label>Department</label><br><br>
+                            <input type="text" name="Deapartment" placeholder='Department' required><br> <br>
+                            <label>College</label><br><br>
+                            <input type="text" name="College" placeholder='College name' required><br>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="submit" id="submit">
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyp92nh8440BFPb-BKb_cPy4iMOSMT8ApDjEwtxHk029Va7RBfig0SiE6l9cfYG2iv9QQ/exec'
+        const form = document.forms['google-sheet']
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert("You have successfully submitted."))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
