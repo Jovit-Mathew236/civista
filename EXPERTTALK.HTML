@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://github.com/Jovit-Mathew236/My-Personal-Web/blob/main/Logo2.png?raw=true" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>EXPERT TALKS | ASTHRA</title>
+</head>
+
+<body>
+    <div class='star'>
+        <div class='head-box'>
+            <div class='head'>
+                <h1> Pseudoscientific practice in civil engineering
+                </h1>
+                <p>
+                    This talk discusses about different pseudoscientific practices like Vastu, Feng Shui, water dowsing,
+                    which is being followed commonly in the construction industry. The talk will affirm the importance
+                    of scientific temper that is to be followed by the civil engineers. Engineers shall join hand with
+                    the scientists for a better tomorrow, by bringing rationality in every aspects of civil engineering
+                    practice.
+                    
+                </p>
+            </div>
+        </div>
+        <div class='form'>
+            <div>
+                <form name="google-sheet" method="post" autocomplete="off">
+                    <div class='form-inp-field'>
+                        <div class='form-field'>
+
+                            <label>Name</label><br><br>
+                            <input type="text" name="Name" placeholder='Name' required><br><br>
+                            <label>Phone</label><br><br>
+                            <input type="number"
+                                onchange="if (this.value.length != (10 || 12)) swal('Info!', 'The typed phone number is Wrong 😯', 'info') "
+                                name="Phone" placeholder='Phone Number' required><br>
+                        </div>
+                        <div class='form-field'>
+                            <label>Email</label><br><br>
+                            <input type="email" name="Email" placeholder='yourname@gamil.com' required><br><br>
+                            <label>Department</label><br><br>
+                            <input type="text" name="Deapartment" placeholder='Department' required><br> <br>
+                            <label>College</label><br><br>
+                            <input type="text" name="College" placeholder='College name' required><br>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="submit" id="submit">
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzZsl0jorDiY31VMOTXHypb1eOS0AsqOqyFTX8LHJI5vRL80pE0isMhFhxQsqa6sBzO/exec'
+        const form = document.forms['google-sheet']
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => swal("Good job!", "You have successfully submitted !", "success").then(() => location.reload()))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
